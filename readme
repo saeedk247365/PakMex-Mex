@@ -1,3 +1,20 @@
+### DEPLOYMENT
+apt update && apt upgrade
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+source ~/.bashrc
+nvm install v20.0.0
+git clone https://github.com/saeedk247365/PakMex-Mex.git
+cd Pakmex
+npm install
+npx greenlock init --config-dir ./greenlock.d --maintainer-email 'saeedk247365@gmail.com'
+npx greenlock add --subject pakmexexporters.com --altnames "pakmexexporters.com,www.pakmexexporters.com"
+npm install -g pm2
+pm2 start app
+
+
+
+
+
 git add .
 git commit -m "Initial commit"
 git push -u origin main
